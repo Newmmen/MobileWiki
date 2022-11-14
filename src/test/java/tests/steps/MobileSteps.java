@@ -38,7 +38,7 @@ public class MobileSteps {
 
 
     public MobileSteps searchElement(String elementName) {
-        step("Type search {*}", () -> {
+        step("Type search", () -> {
             $(AppiumBy.accessibilityId("Search Wikipedia")).click();
             $(AppiumBy.id("org.wikipedia.alpha:id/search_src_text"))
                     .sendKeys(elementName);
