@@ -15,7 +15,8 @@ def allureVersion = "2.19.0",
     assertJVersion = "3.23.1",
     junitVersion = "5.9.0",
     slf4jVersion = "1.7.32",
-    ownerVersion = "1.0.4"
+    ownerVersion = "1.0.4",
+    commonsIoVersion = "2.11.0"
 
 allure {
     report {
@@ -41,7 +42,8 @@ dependencies {
             "io.appium:java-client:$appiumVersion",
             "org.junit.jupiter:junit-jupiter:$junitVersion",
             "org.slf4j:slf4j-simple:$slf4jVersion",
-            "org.aeonbits.owner:owner:$ownerVersion"
+            "org.aeonbits.owner:owner:$ownerVersion",
+            "commons-io:commons-io:$commonsIoVersion"
 
     )
 }

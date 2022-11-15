@@ -22,7 +22,7 @@ public class WikipediaWebTest extends TestBase {
                 .searchElement(element)
                 .checkSearchedArticles()
                 .clickOnArticle()
-                .checkElementOnPage(element);
+                .checkArticleView();
 
     }
 }

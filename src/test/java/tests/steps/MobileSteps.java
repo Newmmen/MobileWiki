@@ -4,6 +4,7 @@ import io.appium.java_client.AppiumBy;
 
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 import static io.qameta.allure.Allure.step;
@@ -19,6 +20,12 @@ public class MobileSteps {
     public MobileSteps checkElementOnPage(String elementName) {
         step("", () ->
                 $(AppiumBy.className("android.widget.TextView")).shouldHave(text(elementName)));
+        return this;
+    }
+
+    public MobileSteps checkArticleView() {
+        step("", () ->
+                $(AppiumBy.className("android.webkit.WebView")).shouldBe(visible));
         return this;
     }
 
