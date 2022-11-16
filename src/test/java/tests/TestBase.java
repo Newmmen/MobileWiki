@@ -2,6 +2,8 @@ package tests;
 
 import com.codeborne.selenide.Configuration;
 import drivers.BrowserstackMobileDriver;
+import drivers.LocalMobileDriver;
+import drivers.RealDeviceDriver;
 import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
@@ -14,8 +16,21 @@ import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
 public class TestBase {
     @BeforeAll
     public static void setup() {
-        Configuration.browser = BrowserstackMobileDriver.class.getName();
-        Configuration.browserSize = null;
+        switch (System.getProperty("device.launch")) {
+            case ("local"):
+                Configuration.browser = LocalMobileDriver.class.getName();
+                Configuration.browserSize = null;
+                break;
+            case ("real"):
+                Configuration.browser = RealDeviceDriver.class.getName();
+                Configuration.browserSize = null;
+                break;
+            case ("remote"):
+                Configuration.browser = BrowserstackMobileDriver.class.getName();
+                Configuration.browserSize = null;
+                break;
+        }
+
     }
 
     @BeforeEach
@@ -34,6 +49,9 @@ public class TestBase {
 
         closeWebDriver();
 
-        Attach.video(sessionId);
+        if (System.getProperty("device.launch").equals("remote")) {
+            Attach.video(sessionId);
+        }
+
     }
 }
