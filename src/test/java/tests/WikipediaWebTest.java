@@ -1,23 +1,25 @@
 package tests;
 
 import org.junit.jupiter.api.Test;
-import tests.steps.MobileSteps;
+import tests.steps.MainScreenTabs;
+import tests.steps.SearchScreenSteps;
 
 public class WikipediaWebTest extends TestBase {
-    MobileSteps mobileSteps = new MobileSteps();
+    SearchScreenSteps searchScreenSteps = new SearchScreenSteps();
+    MainScreenTabs mainScreenTabs = new MainScreenTabs();
 
     @Test
     void checkSearchWiki() {
-        mobileSteps
+        searchScreenSteps
                 .skipLanguageAlert()
                 .searchElement("BrowserStack")
                 .checkSearchedArticles();
     }
-    
+
     @Test
     void checkArticleOpening() {
         String element = "Appium";
-        mobileSteps
+        searchScreenSteps
                 .skipLanguageAlert()
                 .searchElement(element)
                 .checkSearchedArticles()
@@ -25,6 +27,18 @@ public class WikipediaWebTest extends TestBase {
                 .checkArticleView();
 
     }
+
+    @Test
+    void checkAllMainTabs() {
+        searchScreenSteps
+                .skipLanguageAlert();
+        mainScreenTabs
+                .openSavedTab()
+                .openEditsTab()
+                .openSearchTab()
+                .openMenuTab();
+    }
+
 }
 
 
