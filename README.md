@@ -3,37 +3,28 @@
 
 ## Content
 
-> ➠ [Covered functionality](#earth_africa-покрытый-функционал)
+> ➠ [Covered functionality](#Covered-functionality)
 >
-> ➠ [Technology stack](#classical_building-технологический-стек)
+> ➠ [Technology stack](#classical_building-Technology-stack)
 >
-> ➠ [Running tests from the terminal](#запуск-тестов-из-терминала)
+> ➠ [Running tests from the terminal](#Running-tests-from-the-terminal)
 >
-> ➠ [Test results report in Allure Report](#skier-главная-страница-allure-отчета)
-> 
-> ➠ [Отчет о результатах тестирования в Allure TestOps](#skier-главная-страница-allure-testops-отчета)
+> ➠ [Test results report in Allure Report](#skier-Test-results-in-allure-Report)
 >
-> ➠ [Уведомления в Telegram с использованием бота](#-уведомления-в-telegram-с-использованием-бота)
-> 
-> ➠ [Добавление в Jira тест-кейсов из Allure TestOps](#-добавления-в-jira-с-тест-кейсов-из-allure-testops)
->
-> ➠ [An example of running a test in Browserstack](#-пример-запуска-теста-в-selenoid)
+> ➠ [An example of running a test in Browserstack](#An-example-of-running-a-test-in-Browserstack)
 
 ## :tshirt: Covered functionality
 
-> Разработаны автотесты на <code>UI</code>.
+> Autotests developed <code>Mobile</code>.
 
 ### Mobile
 
-- [x] Open main page IMDB.com (Проверка открытия основной страницы "IMDB.com")
-- [x] Open main page IMDB pro page (Проверка открытия страницы для версии "Pro")
-- [x] Open big side panel (Проверка открытия всплывающей панели)
-- [x] Open section on big side panel (Проверка выбора темы на всплывающей панели)
-- [x] Login with IMDB account (Проверка логина на сайте, используя аккаунт IMDB)
-- [x] Login with empty data IMDB account (Проверка ошибки при логине с пустыми данными)
-- [x] Sign out from IMDB account (Проверка выхода из аккаунта)
+- [x] Check searching an article
+- [x] Check opening an article
+- [x] Check All tabs on main page
 
-## :abacus: Технологический стек
+
+## :abacus: Technology stack
 
 <p align="center">
 <img width="6%" title="IntelliJ IDEA" src="images/logo/Intelij_IDEA.svg">
