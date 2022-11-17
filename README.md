@@ -3,15 +3,15 @@
 
 ## Content
 
-> ➠ [Covered functionality](#Covered-functionality)
+> ➠ [Covered functionality](#tshirt-covered-functionality)
 >
-> ➠ [Technology stack](#classical_building-Technology-stack)
+> ➠ [Technology stack](#abacus-technology-stack)
 >
 > ➠ [Running tests from the terminal](#Running-tests-from-the-terminal)
 >
-> ➠ [Test results report in Allure Report](#skier-Test-results-in-allure-Report)
+> ➠ [Test results report in Allure Report](#scroll-main-page-of-allure-report)
 >
-> ➠ [An example of running a test in Browserstack](#An-example-of-running-a-test-in-Browserstack)
+> ➠ [An example of running a test in Browserstack](#-an-example-of-running-a-test-in-browserstack)
 
 ## :tshirt: Covered functionality
 
