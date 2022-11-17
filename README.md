@@ -107,7 +107,6 @@ app.baseurl=https://github.com/wikimedia/apps-android-wikipedia/releases/downloa
 
 ### :scroll: Main page of <code>Allure-report</code>
 
-> После завершения сборки, запуск отображается в <code>Allure Report</code>.
 
 
 <p align="center">
