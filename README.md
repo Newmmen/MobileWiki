@@ -36,7 +36,7 @@
 <img width="6%" title="JUnit5" src="images/logo/JUnit5.svg">
 <img width="6%" title="GitHub" src="images/logo/GitHub.svg">
 <img width="6%" title="Jenkins" src="images/logo/Jenkins.svg">
-<img width="6%" title="Appium" src="images/logo/Appiun.svg">
+<img width="6%" title="Appium" src="images/logo/Appium.svg">
 </p>
 
 In this project, autotests are written in <code>Java</code> with <code>Selenide</code> and <code>Appium</code> for Mobile tests.
@@ -67,7 +67,7 @@ gradle clean test
 ```
 test launch options
 ```
-${device.launch} = remote (remote launch tests with <code>Browserstack</code>)
+${device.launch} = remote (remote launch tests with Browserstack)
 ${device.launch} = local (local launch tests with mobile emulator)
 ${device.launch} = remote (launch tests on your real device)
 
@@ -111,38 +111,14 @@ app.baseurl=https://github.com/wikimedia/apps-android-wikipedia/releases/downloa
 
 
 <p align="center">
-<img title="Allure Overview Dashboard" src="images/screens/allure.PNG">
+<img title="Allure Overview Dashboard" src="images/screens/Allure.PNG">
 </p>
 
 
-### :scroll: Основной дашборд в <code>Allure TestOps</code>
+## <img width="4%" title="Browserstack" src="images/logo/browserstack-icon.svg"> An example of running a test in <code>Browserstack</code>
 
-> После завершения сборки, запуск отображается в <code>Allure TestOp</code>.
-
-<p align="center">
-<img title="Allure TestOps Overview Dashboard" src="images/screens/AllureTestOps.PNG">
-</p>
-
-
-## <img width="4%" title="Telegram" src="images/logo/Telegram.svg"> Уведомления в Telegram с использованием бота
-
-> После завершения сборки специальный бот, созданный в <code>Telegram</code>, автоматически обрабатывает и отправляет сообщение с отчетом о прогоне.
+>A video is attached to each test in the report. One of these videos is shown below.
 
 <p align="center">
-<img title="Telegram Notifications" src="images/screens/Telegram.PNG">
-</p>
-
-### :scroll: Интеграция <code>Allure TestOps</code> с <code>Jira</code>
-
-> После завершения сборки, запуск отображается в <code>Allure TestOp</code>, автоматически обрабатывает и отображается в <code>Jira</code>.
-
-<p align="center">
-<img title="Allure Overview" src="images/screens/Jira.PNG">
-</p>
-
-## <img width="4%" title="Selenoid" src="images/logo/Selenoid.svg"> Пример запуска теста в Selenoid
-
-> К каждому тесту в отчете прилагается видео. Одно из таких видео представлено ниже.
-<p align="center">
-  <img title="Selenoid Video" src="images/gifs/Selenoid.gif">
+  <img title="Browserstack Video" src="images/gifs/Browserstack.gif">
 </p>
