@@ -1,5 +1,6 @@
 package tests;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import tests.steps.MainScreenTabs;
 import tests.steps.SearchScreenSteps;
@@ -8,6 +9,7 @@ public class WikipediaWebTest extends TestBase {
     SearchScreenSteps searchScreenSteps = new SearchScreenSteps();
     MainScreenTabs mainScreenTabs = new MainScreenTabs();
 
+    @DisplayName("Check searching an article")
     @Test
     void checkSearchWiki() {
         searchScreenSteps
@@ -16,6 +18,7 @@ public class WikipediaWebTest extends TestBase {
                 .checkSearchedArticles();
     }
 
+    @DisplayName("Check opening an article")
     @Test
     void checkArticleOpening() {
         String element = "Appium";
@@ -28,6 +31,7 @@ public class WikipediaWebTest extends TestBase {
 
     }
 
+    @DisplayName("Check All tabs on main page")
     @Test
     void checkAllMainTabs() {
         searchScreenSteps
