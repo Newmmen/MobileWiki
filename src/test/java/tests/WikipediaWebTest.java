@@ -21,10 +21,9 @@ public class WikipediaWebTest extends TestBase {
     @DisplayName("Check opening an article")
     @Test
     void checkArticleOpening() {
-        String element = "Appium";
         searchScreenSteps
                 .skipLanguageAlert()
-                .searchElement(element)
+                .searchElement("Appium")
                 .checkSearchedArticles()
                 .clickOnArticle()
                 .checkArticleView();
