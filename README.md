@@ -30,76 +30,82 @@
 <img width="6%" title="IntelliJ IDEA" src="images/logo/Intelij_IDEA.svg">
 <img width="6%" title="Java" src="images/logo/Java.svg">
 <img width="6%" title="Selenide" src="images/logo/Selenide.svg">
-<img width="6%" title="Selenoid" src="images/logo/Selenoid.svg">
+<img width="6%" title=Browserstack" src="images/logo/browserstack-icon.svg">
 <img width="6%" title="Allure Report" src="images/logo/Allure_Report.svg">
 <img width="6%" title="Gradle" src="images/logo/Gradle.svg">
 <img width="6%" title="JUnit5" src="images/logo/JUnit5.svg">
 <img width="6%" title="GitHub" src="images/logo/GitHub.svg">
 <img width="6%" title="Jenkins" src="images/logo/Jenkins.svg">
-<img width="6%" title="Telegram" src="images/logo/Telegram.svg">
+<img width="6%" title="Appium" src="images/logo/Appiun.svg">
 </p>
 
-В данном проекте автотесты написаны на <code>Java</code> с использованием <code>Selenide</code> для UI-тестов.
+In this project, autotests are written in <code>Java</code> with <code>Selenide</code> and <code>Appium</code> for Mobile tests.
 
-> Библиотека <code>Owner</code> передает данные для логина (файл расположен локально)
+> <code>Owner</code> library provide credentials data (the file located locally).
 > 
-> <code>Selenoid</code> выполняет запуск браузеров в контейнерах <code>Docker</code>.
+> <code>Browserstack</code> launches  test remotely.
 >
-> <code>Allure Report</code> формирует отчет о запуске тестов.
-> 
-> <code>Allure TestOps</code> формирует расширенный отчет о запуске тестов, отображает сформированные тест-кейсы
-> 
-> Для автоматизированной сборки проекта используется <code>Gradle</code>.
+> Local launch with <code>Virtual Device Manager</code>
 >
-> В качестве библиотеки для модульного тестирования используется <code>JUnit 5</code>.
+> Launch on real device with <code>Appium</code>
 >
-> <code>Jenkins</code> выполняет запуск тестов.
+> <code>Allure Report</code> generates a test run report.
 > 
-> Сфомированные в <code>Allure TestOps</code> тест-кейсы и запуски прогона отображаются на выбраном тикете в <code>Jira</code>.
->  
->  После завершения прогона отправляются уведомления с помощью бота в <code>Telegram</code>.
+> <code>Gradle</code> is used for automated project build.
+>
+> <code>JUnit 5</code> is used as a unit testing library.
+>
+> <code>Jenkins</code> runs the tests.
 
-## Запуск тестов из терминала
+## Running tests from the terminal
 
-### :desktop_computer: Локальный запуск тестов
+### :desktop_computer: Running Tests Locally
 
 ```
 gradle clean test
+-Ddevice.launch = ${device.launch}
 ```
-
-### :desktop_computer: Удаленный запуск тестов
-
+test launch options
 ```
-clean
-WebTests
--Dselenide.remote=${REMOTE}
--Dbrowser_size=${BROWSER_SIZE}
--Dbrowser_name=${BROWSER_NAME}
--Dbrowser_version=${BROWSER_VERSION}
-```
-### :desktop_computer: Добавить файл <code>credentials.properties</code> с зарегестрированым аккаунтом IMDB.com
-```
-user.email={user email}
-user.name={user name}
-user.password={user password}
+${device.launch} = remote (remote launch tests with <code>Browserstack</code>)
+${device.launch} = local (local launch tests with mobile emulator)
+${device.launch} = remote (launch tests on your real device)
 
 ```
 
+### :desktop_computer: Remote test running
 
-### :desktop_computer: Параметры сборки
+```
+clean test
+-Ddevice.launch = ${device.launch}
+```
+### :desktop_computer: Add file <code>credentials.properties</code> with data
+```
+browserstack.user =browserstack user
+browserstack.key =browserstack user key
+browserstack.url=http://hub.browserstack.com/wd/hub  (browserstack url)
+app=browserstack installed app url
+device=Google Pixel 3   (browserstack device name)
+real.device=real device name (code)
+os_version=browserstack android version
+project= project name
+build= build name
+name= test's name
+local.name=Pixel 4 API 30 (emulated device name)
+local.platform=Android (emulated device platform name)
+local.version=11.0 (emulated device platform version)
+real.version=11.0 (real device platform versiom)
+app.package=org.wikipedia.alpha (name of app package)
+app.activity=org.wikipedia.main.MainActivity (name of app activity)
+app.url= local appium server link
+app.path=src/test/resources/apps/app-alpha-universal-release.apk local app link
+app.baseurl=https://github.com/wikimedia/apps-android-wikipedia/releases/download/latest/app-alpha-universal-release.apk (app link from github)
 
-> <code>REMOTE_URL</code> – адрес удаленного сервера, на котором будут запускаться тесты.
->
-> <code>BROWSER</code> – браузер, в котором будут выполняться тесты (_по умолчанию - <code>chrome</code>_).
->
-> <code>BROWSER*VERSION</code> – версия браузера, в которой будут выполняться тесты (*по умолчанию - <code>99.0</code>\_).
->
-> <code>BROWSER*SIZE</code> – размер окна браузера, в котором будут выполняться тесты (*по умолчанию - <code>1920x1080</code>\_).
+```
 
 
 
-
-### :scroll: Основной дашборд в <code>Allure Report</code>
+### :scroll: Main page of <code>Allure-report</code>
 
 > После завершения сборки, запуск отображается в <code>Allure Report</code>.
 
