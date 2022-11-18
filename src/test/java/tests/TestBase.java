@@ -19,17 +19,17 @@ public class TestBase {
         switch (System.getProperty("device.launch")) {
             case ("local"):
                 Configuration.browser = LocalMobileDriver.class.getName();
-                Configuration.browserSize = null;
                 break;
             case ("real"):
                 Configuration.browser = RealDeviceDriver.class.getName();
-                Configuration.browserSize = null;
                 break;
             case ("remote"):
                 Configuration.browser = BrowserstackMobileDriver.class.getName();
-                Configuration.browserSize = null;
                 break;
+            default:
+                throw new RuntimeException("No such launch option");
         }
+        Configuration.browserSize = null;
 
     }
 
